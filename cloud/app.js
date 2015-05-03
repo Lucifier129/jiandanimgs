@@ -5,8 +5,8 @@ var app = express()
 var bodyParser = require('body-parser')
 
 // App 全局配置
-app.set('views','cloud/views');   // 设置模板目录
-app.set('view engine', 'hbs');    // 设置 template 引擎
+app.set('views', path.join(__dirname, 'views'))   // 设置模板目录
+app.set('view engine', 'hbs')    // 设置 template 引擎
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static('public'))
