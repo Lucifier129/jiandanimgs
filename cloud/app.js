@@ -9,11 +9,11 @@ var imgs = require(path.join(__dirname, 'routes/imgs'))
 var app = express()
 
 // App 全局配置
-app.set('views', path.join(__dirname, 'views'))   // 设置模板目录
-app.set('view engine', 'ejs')    // 设置 template 引擎
+app.set('views', 'cloud/views') // 设置模板目录
+app.set('view engine', 'ejs') // 设置 template 引擎
 
 
-app.use(favicon(path.join(__dirname, 'favicon.ico')))
+//app.use(favicon(path.join(__dirname, 'favicon.ico')))
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
