@@ -1,8 +1,6 @@
-var express = require('express')
 var superagent = require('superagent')
 var cheerio = require('cheerio')
 var path = require('path')
-var util = require('util')
 var Promise = require('es6-promise').Promise
 
 function parse(resolve, reject, err, res) {

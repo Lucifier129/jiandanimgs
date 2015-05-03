@@ -13,8 +13,6 @@ var app = express()
 app.set('views', 'views')
 app.set('view engine', 'hbs')
 
-throw new Error('an error')
-
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'))
@@ -62,6 +60,3 @@ app.use(function(err, req, res, next) {
 })
 
 app.listen(8000)
-
-
-module.exports = app
