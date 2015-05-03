@@ -4,7 +4,6 @@ var favicon = require('serve-favicon')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
-
 var imgs = require(path.join(__dirname, 'routes/imgs'))
 var app = express()
 
@@ -12,18 +11,15 @@ var app = express()
 app.set('views', 'cloud/views') // 设置模板目录
 app.set('view engine', 'ejs') // 设置 template 引擎
 
-
-//app.use(favicon(path.join(__dirname, 'favicon.ico')))
+app.use(favicon(path.join(__dirname, 'favicon.ico')))
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static('public'))
-app.use(express.static('static'))
 
 app.get('/', imgs)
 app.get('/:page', imgs)
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

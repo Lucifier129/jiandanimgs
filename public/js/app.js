@@ -2,6 +2,9 @@ define(function(require, exports, module) {
     var $ = require('jquery')
     var app = {
     	init: function() {
+            if ('ontouchstart' in document) {
+                return
+            }
     		this.listen()
     	},
         listen: function() {
@@ -53,9 +56,6 @@ define(function(require, exports, module) {
                         })
                     }
                 })
-             $('#imgArea img').on('dblclick', function() {
-             	$('#closer').trigger('click')
-             })
         },
         selectImgByIndex: function(index) {
         	var total = $("#content li").length

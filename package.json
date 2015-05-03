@@ -10,7 +10,6 @@
     "debug": "~2.1.1",
     "es6-promise": "^2.1.1",
     "express": "^3.4.8",
-    "hbs": "^2.9.0",
     "morgan": "~1.5.1",
     "serve-favicon": "~2.2.0",
     "superagent": "^1.2.0"
