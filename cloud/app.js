@@ -10,7 +10,7 @@ var app = express()
 
 // App 全局配置
 app.set('views', path.join(__dirname, 'views'))   // 设置模板目录
-app.set('view engine', 'hbs')    // 设置 template 引擎
+app.set('view engine', 'ejs')    // 设置 template 引擎
 
 
 app.use(favicon(path.join(__dirname, 'favicon.ico')))
@@ -23,7 +23,7 @@ app.use(express.static('static'))
 
 app.get('/', function(req, res) {
   res.render('test', {
-    markup: '<h1>Jade Gu</h1>'
+    markup: 'Jade Gu'
   })
 })
 
