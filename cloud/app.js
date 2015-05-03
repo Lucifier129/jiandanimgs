@@ -22,7 +22,9 @@ app.use(express.static('public'))
 app.use(express.static('static'))
 
 app.get('/', function(req, res) {
-  res.send('Jade Gu')
+  res.render('test', {
+    markup: '<h1>Jade Gu</h1>'
+  })
 })
 
 app.get('/imgs', imgs)
