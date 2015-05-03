@@ -21,14 +21,8 @@ app.use(cookieParser())
 app.use(express.static('public'))
 app.use(express.static('static'))
 
-app.get('/', function(req, res) {
-  res.render('test', {
-    markup: 'Jade Gu'
-  })
-})
-
-app.get('/imgs', imgs)
-app.get('/imgs/:page', imgs)
+app.get('/', imgs)
+app.get('/:page', imgs)
 
 
 // catch 404 and forward to error handler

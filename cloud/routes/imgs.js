@@ -68,7 +68,7 @@ function range(num) {
         })
     }
     return ret.map(function(item) {
-        item.url = item.className === 'active' ? '#' : path.join('/imgs', String(item.index))
+        item.url = item.className === 'active' ? '#' : path.join('/', String(item.index))
         return item
     })
 }
@@ -101,11 +101,9 @@ function hanlde(req, res) {
     }
     fetchImgs(target)
         .then(convert)
-        .then(res.render.bind(res, 'index'), function(err) {
-            res.json({
-                error: err,
-                msg: 'from then'
-            })
+        .then(function(data) {
+            console.log(data)
+            res.render('index', data)
         })
         .catch(function(err) {
             res.json({
