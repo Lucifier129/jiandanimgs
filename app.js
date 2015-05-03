@@ -21,11 +21,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static('public'))
 
-app.get('/', imgs)
-app.get('/user', function(req, res) {
+app.get('/', function(req, res) {
   res.send('Jade Gu')
 })
-app.get('/:page', imgs)
+
+app.get('/imgs', imgs)
+app.get('/imgs/:page', imgs)
 
 
 // catch 404 and forward to error handler

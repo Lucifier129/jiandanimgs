@@ -68,7 +68,7 @@ function range(num) {
         })
     }
     return ret.map(function(item) {
-        item.url = item.className === 'active' ? '#' : path.join('/', String(item.index))
+        item.url = item.className === 'active' ? '#' : path.join('/imgs', String(item.index))
         return item
     })
 }
