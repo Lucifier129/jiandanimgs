@@ -103,7 +103,7 @@ function hanlde(req, res) {
         .then(convert)
         .then(res.render.bind(res, 'index'), function(err) {
             res.json({
-                error: err
+                error: err,
                 msg: 'from then'
             })
         })
