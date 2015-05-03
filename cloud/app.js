@@ -1,6 +1,6 @@
 var express = require('express')
 var path = require('path')
-var imgs = require('./routes/imgs')
+var imgs = require('cloud/routes/imgs')
 var app = express()
 
 // App 全局配置
