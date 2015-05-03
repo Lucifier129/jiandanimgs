@@ -45,7 +45,6 @@ function parse(resolve, reject, err, res) {
 }
 
 function fetchImgs(url) {
-    console.log(url)
     return new Promise(function(resolve, reject) {
         superagent
             .get(url)
@@ -98,11 +97,9 @@ function convert(resource) {
 
 function hanlde(req, res) {
     var target = 'jandan.net/ooxx/'
-    console.log(util.inspect(req.params))
     if (req.params.page) {
         target = path.join(target, 'page-' + req.params.page)
     }
-    console.log(target, req.params.page)
     fetchImgs(target)
         .then(convert)
         .then(res.render.bind(res, 'index'))
