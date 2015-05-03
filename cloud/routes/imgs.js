@@ -101,8 +101,8 @@ function hanlde(req, res) {
     }
     fetchImgs(target)
         .then(convert)
-        .then(function() {
-            res.send(target)
+        .then(function(data) {
+            res.render('index.hbs', data)
         })
         .catch(function(err) {
             res.json({
