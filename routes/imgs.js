@@ -92,6 +92,7 @@ function convert(resource) {
         })
     })
     result.pageTurning = range(resource.pageId)
+    result.pageId = resource.pageId
     return result
 }
 

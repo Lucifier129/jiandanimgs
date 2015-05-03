@@ -10,7 +10,7 @@ var imgs = require('./routes/imgs')
 var app = express()
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', 'views')
 app.set('view engine', 'hbs')
 
 // uncomment after placing your favicon in /public
@@ -19,14 +19,13 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('public'))
 
 app.get('/', imgs)
 app.get('/user', function(req, res) {
   res.send('Jade Gu')
 })
 app.get('/:page', imgs)
-
 
 
 // catch 404 and forward to error handler
@@ -60,7 +59,7 @@ app.use(function(err, req, res, next) {
   })
 })
 
-app.listen(3000)
+app.listen(8000)
 
 
 module.exports = app
