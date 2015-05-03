@@ -101,9 +101,7 @@ function hanlde(req, res) {
     }
     fetchImgs(target)
         .then(convert)
-        .then(function(data) {
-            res.render('index.hbs', data)
-        })
+        .then(res.render.bind(res, 'index'))
         .catch(function(err) {
             res.json({
                 meta: {
