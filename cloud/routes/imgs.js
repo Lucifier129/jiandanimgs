@@ -11,17 +11,14 @@ function parse(resolve, reject, err, res) {
     var pageId = Number($('.current-comment-page').eq(0).text().replace(/\[|\]/g, ''))
     var imgs = []
     var texts = []
+
     $('ol.commentlist .text').each(function(i1, text) {
         var o, x
-        $(text).find('.vote span').each(function(i2, span) {
-            var id = $(span).attr('id')
-            if (!id) {
-                return
-            }
-            if (id.indexOf('cos_support') >= 0) {
-                o = +$(span).text()
-            } else if (id.indexOf('cos_unsupport') >= 0) {
-                x = +$(span).text()
+        $(text).next('.jandan-vote').find('span').each(function(i2, span) {
+            if (i2 === 0) {
+                o = Number($(span).text())
+            } else if (i2 === 1) {
+                x = Number($(span).text())
             }
         })
         if (o / x > 5) {
@@ -34,7 +31,6 @@ function parse(resolve, reject, err, res) {
             })
         }
     })
-
     resolve({
         imgs: imgs,
         pageId: pageId,
